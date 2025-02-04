@@ -41,3 +41,11 @@ while color_ind < len(color_counts):
             palette = np.vstack((palette, new_color))
     color_ind += 1
 ```
+
+## Example Images
+Some examples of what this program does are also in this repository.
+For both examples, the `NUM_COLORS` was set to 5.
+> [!NOTE]
+> Although NUM_COLORS` was set to 5 for both images, palette_leaves.jpg only has 4 colors in its color palette.
+> This is because the colors in the original image leaves.jpg were not distinct enough.
+
