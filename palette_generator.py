@@ -21,7 +21,7 @@ color_counts = sorted(color_counts, key=lambda x: x[3])[::-1]
 
 # Determine Color Palette
 palette = np.empty((0,3), int)
-NUM_COLORS = 5      # Number of colors in palette
+NUM_COLORS = 5      # Maximum number of colors in palette
 color_ind = 0       # Color Index for color_counts
 DIFFERENCE = 30     # Differece in rgb values from rest of palette
 
@@ -51,7 +51,7 @@ while color_ind < len(color_counts):
 # Add palette colors to bottom of image
 img_w = img_np.shape[1]
 img_h = img_np.shape[0]
-palette_w = int(img_w/NUM_COLORS)
+palette_w = int(img_w/(palette.shape[0]))
 PALETTE_H = 10
 
 # Add palette pixels to image
@@ -76,5 +76,5 @@ palette_img_np = palette_img_np.astype(np.uint8)
 palette_img = Image.fromarray(palette_img_np)
 palette_img.show()
 
-new_file_name = 'palette_' + FILE_NAME
-palette_img.save(new_file_name)
+NEW_FILE_NAME = 'palette_' + FILE_NAME
+palette_img.save(NEW_FILE_NAME)
