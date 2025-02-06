@@ -3,6 +3,19 @@
 This program generates a color palette based on an image.
 It then saves a new image which is the original image with a bar at the bottom displaying the color palette.
 
+<p align="center">
+    <div class="row">
+        <img src="/example.png" width="300" height="200"/>
+        <img src="/palette_example.png" width="300" height="200"/>
+    </div>
+</p>
+<p align="center">
+    <div class="row">
+        <img src="/leaves.jpg" width="300" height="200"/>
+        <img src="/palette_leaves.jpg" width="300" height="200"/>
+    </div>
+</p>
+
 ## Adapting the Code
 Update the `FILE_NAME` to the name of the image that the color palette will be based on. 
 The image with the color palette will be saved as a new image with the file name 'palette' + `FILE_NAME`.
