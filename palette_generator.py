@@ -1,16 +1,28 @@
 """Color Palette Generator From Image - Samantha Song - started 2025.01.31"""
-
 # Take in Image
 # Sort Colors in Image by Appearance
 # Determine Colors that are "Distinct"
 # Determine Colors that have good color contrast
 
+import sys
 from PIL import Image
 import numpy as np
 
-# Open file and convert into list of pixels
+# File name and path
 FILE_NAME = 'example.png'
-img = Image.open(FILE_NAME)
+IMG_PATH = 'Images'
+
+# Command Line - Args
+args = sys.argv
+if len(args) == 2:
+    FILE_NAME = args[1]
+    IMG_PATH = ''
+elif len(args) == 3:
+    FILE_NAME = args[2]
+    IMG_PATH = args[1]
+
+# Open file and convert into list of pixels
+img = Image.open(f"{IMG_PATH}\\{FILE_NAME}")
 img_np = np.array(img)
 pixels = np.array(img).reshape(-1, 3)
 
@@ -77,4 +89,4 @@ palette_img = Image.fromarray(palette_img_np)
 palette_img.show()
 
 NEW_FILE_NAME = 'palette_' + FILE_NAME
-palette_img.save(NEW_FILE_NAME)
+palette_img.save(f'{IMG_PATH}\\{NEW_FILE_NAME}')
